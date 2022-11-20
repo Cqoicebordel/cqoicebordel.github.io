@@ -1,0 +1,10 @@
+include: [ "/.well-known" ]
+exclude:
+  - CHANGELOG.md
+  - CNAME
+  - Dockerfile
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - Vagrantfile
