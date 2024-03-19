@@ -32,15 +32,31 @@ body {
 }
 
 /* LAYOUT STYLES */
+:root {
+  --circle-percent: 100%;
+}
+@property --circle-percent {
+  syntax: "<percentage>";
+  initial-value: 100%;
+  inherits: true;
+}
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 1em;
   line-height: 1.5;
   color: #6d6d6d;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-  background: radial-gradient(circle at 100%, #7336, #3335 20%, #eee7 75%, #45303080 90%, #9667 97%);
+  background: radial-gradient(circle at var(--circle-percent), #7336, #3335 20%, #eee7 75%, #45303080 90%, #9667 97%);
+  animation:background-anim 30s ease-in-out alternate infinite;
 }
-
+@keyframes background-anim {
+  from {
+    --circle-percent: 70%;
+  }
+  to {
+    --circle-percent: 120%;
+  }
+}
 a {
   color: #d5000d;
 }
